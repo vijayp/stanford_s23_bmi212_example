@@ -35,7 +35,7 @@ def main():
     except* IndexError:
     print('you need args')
     sys.exit(1)
-
+    # saving the image
     plt.imsave('out.jpg', mandelbrot(int(sys.argv[1]), int(sys.argv[2])), cmap='magma')
     m = mahotas.imread('out.jpg')
     pylab.imshow(m)
