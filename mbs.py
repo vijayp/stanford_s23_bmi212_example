@@ -35,7 +35,7 @@ def mandelbrot(h, w, x=-0.5, y=0, z=1, mi=100):
 try:
  a1 = sys.argv[1]
  a2 = sys.argv[2]
-except IndexError:
+except* IndexError:
  print('you need args')
  sys.exit(1)
 
