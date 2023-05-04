@@ -2,7 +2,6 @@
 # inscrutable mandelbrot plotting code
 # try running with 800 1000
 import mahotas
-import pylab
 import numpy as np
 import sys
 
@@ -32,8 +31,9 @@ def main(a1, a2):
     # saving the image
     plt.imsave('out.jpg', mandelbrot(int(sys.argv[1]), int(sys.argv[2])), cmap='magma')
     m = mahotas.imread('out.jpg')
-    pylab.imshow(m)
-    pylab.show()
+    plt.imshow(m)
+    plt.axis('off')
+    plt.show()
 
 
 if __name__ == "__main__":
