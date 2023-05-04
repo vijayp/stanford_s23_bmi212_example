@@ -39,7 +39,7 @@ def main():
     plt.imsave('out.jpg', mandelbrot(int(sys.argv[1]), int(sys.argv[2])), cmap='magma')
     m = mahotas.imread('out.jpg')
     pylab.imshow(m)
-    pylab.show()
+    pylab.show()#show pylab
 
 
 if __name__ == "__main__":
