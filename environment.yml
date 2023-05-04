@@ -1,0 +1,10 @@
+name: BMI212
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - matplotlib
+  - mahotas
+  - numpy
+prefix: /Users/kuod3/opt/miniconda3/envs/BMI212
