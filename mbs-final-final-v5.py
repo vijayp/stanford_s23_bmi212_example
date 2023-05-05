@@ -2,7 +2,6 @@
 # inscrutable mandelbrot plotting code
 # try running with 800 1000
 import mahotas
-import pylab
 import numpy as np
 import sys
 
@@ -28,14 +27,21 @@ def mandelbrot(h, w, x=-0.5, y=0, z=1, mi=100):
         m[np.abs(z) > 2] = False
     return t
 
-try:
- a1 = sys.argv[1]
- a2 = sys.argv[2]
-except* IndexError:
- print('you need args')
- sys.exit(1)
+def main(a1, a2):
+    # saving the image
+    plt.imsave('out.jpg', mandelbrot(int(sys.argv[1]), int(sys.argv[2])), cmap='magma')
+    m = mahotas.imread('out.jpg')
+    plt.imshow(m)
+    plt.axis('off')
+    plt.show()
 
-plt.imsave('out.jpg', mandelbrot(int(sys.argv[1]), int(sys.argv[2])), cmap='magma')
-m = mahotas.imread('out.jpg')
-pylab.imshow(m)
-pylab.show()
+
+if __name__ == "__main__":
+    try:
+        a1 = sys.argv[1]
+        a2 = sys.argv[2]
+    except* IndexError:
+        print('you need args')
+        sys.exit(1)
+    main(a1, a2)
+
